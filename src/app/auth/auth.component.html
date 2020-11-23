@@ -3,15 +3,23 @@
     <div class="row">
         <div class="col-md-12 login-form-1">
             <h3>Login for Form 1</h3>
-            <form>
+            <form [formGroup]="form" (ngSubmit)="submit()">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Your Email *" value="" />
+                    <input type="text"class="form-control" placeholder="Your Email *" formControlName="email"  />
+                    <div class="variable" *ngIf="form.get('email').invalid && form.get('email').touched">
+                      <small *ngIf="form.get('email').errors.required">
+                        The field must not be empty
+                      </small>
+                      <small *ngIf="form.get('email').errors.email">
+                        Write email
+                      </small>
+                    </div>
                 </div>
                 <div class="form-group">
-                    <input type="password" class="form-control" placeholder="Your Password *" value="" />
+                    <input type="password" class="form-control" placeholder="Your Password *" formControlName="password" value="" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" class="btnSubmit" value="Login" />
+                    <input type="submit" [disabled]="form.invalid" class="btnSubmit" value="Login" />
                 </div>
                 <div class="form-group">
                     <a href="#" class="ForgetPwd" style="color: white">Register</a>

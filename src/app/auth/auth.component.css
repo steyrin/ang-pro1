@@ -23,31 +23,44 @@
 .login-container form{
     padding: 10%;
 }
-.btnSubmit
-{
-    width: 50%;
-    border-radius: 1rem;
-    padding: 1.5%;
-    border: none;
-    cursor: pointer;
+.btnSubmit {
+
+  position: relative;
+  display: block;
+  width: 200px;
+  height: 36px;
+  border-radius: 18px;
+  background-color: #1c89ff;
+  border: solid 1px transparent;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 300;
+  cursor: pointer;
+  transition: all .1s ease-in-out;
 }
-.login-form-1 .btnSubmit{
-    font-weight: 600;
-    color: #fff;
-    background-color: #0062cc;
+
+.btnSubmit:hover {
+  background-color: transparent;
+  border-color: #fff;
+  transition: all .1s ease-in-out;
 }
-.login-form-2 .btnSubmit{
-    font-weight: 600;
-    color: #0062cc;
-    background-color: #fff;
+
+.btnSubmit:disabled{
+  background-color: gray;
+  border-color: gray;
+  transition: all .1s ease-in-out;
+  cursor: help;
 }
-.login-form-2 .ForgetPwd{
-    color: #fff;
-    font-weight: 600;
-    text-decoration: none;
+
+input.ng-invalid.ng-touched {
+  border-color: red;
 }
-.login-form-1 .ForgetPwd{
-    color: #0062cc;
-    font-weight: 600;
-    text-decoration: none;
+
+input.ng-valid.ng-touched {
+
+  border-color: green;
+}
+
+.variable{
+  color: red;
 }

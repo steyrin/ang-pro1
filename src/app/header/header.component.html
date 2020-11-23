@@ -11,7 +11,7 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" routerLinkActive="active" routerLink="home">Home
+            <a class="nav-link" routerLinkActive="active" routerLink="home">{{home}}
             </a>
           </li>
           <li class="nav-item">
@@ -25,13 +25,22 @@
           </li>
         </ul>
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item ">
-            <a class="nav-link" routerLinkActive="active" routerLink="auth">Login
-            </a>
+          <li [ngSwitch]="Role.authRole"  class="nav-item ">
+            <div *ngSwitchCase="'Guest'">
+             <a  class="nav-link" routerLinkActive="active" routerLink="auth">Login</a>
+            </div>
+            <div *ngSwitchCase="'Admin'">
+              <a  class="nav-link" routerLinkActive="active" routerLink="#">Logout</a>
+            </div>
+            <div *ngSwitchCase="'User'">
+              <p style="color: white">{{Role.LoginName}} <a  class="nav-link" routerLinkActive="active" routerLink="#"> Logout</a> <p>
+
+            </div>
           </li>
+
         </ul>
       </div>
     </div>
   </nav>
- 
+
 
