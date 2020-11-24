@@ -24,18 +24,15 @@
             <a class="nav-link" href="#">Contact</a>
           </li>
         </ul>
-        <ul class="navbar-nav ml-auto">
-          <li [ngSwitch]="Role.authRole"  class="nav-item ">
-            <div *ngSwitchCase="'Guest'">
+        <ul [ngSwitch]="true"  class="navbar-nav ml-auto">
+          <li *ngSwitchCase="Role.authRole === 'Guest'" class="nav-item ">
              <a  class="nav-link" routerLinkActive="active" routerLink="auth">Login</a>
-            </div>
-            <div *ngSwitchCase="'Admin'">
-              <a  class="nav-link" routerLinkActive="active" routerLink="#">Logout</a>
-            </div>
-            <div *ngSwitchCase="'User'">
-              <p style="color: white">{{Role.LoginName}} <a  class="nav-link" routerLinkActive="active" routerLink="#"> Logout</a> <p>
-
-            </div>
+          </li>
+          <li *ngSwitchCase="Role.authRole ==='User'|| Role.authRole === 'Admin'" class="nav-item ">
+            <a class="nav-link" style="color: white">{{Role.LoginName}} </a>
+          </li>
+          <li *ngSwitchCase="Role.authRole ==='User'|| Role.authRole === 'Admin'" class="nav-item ">
+            <a (click)="logout()" class="nav-link" routerLinkActive="active"> Logout</a>
           </li>
 
         </ul>

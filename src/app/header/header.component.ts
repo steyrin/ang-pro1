@@ -16,4 +16,8 @@ export class HeaderComponent implements OnInit {
   }
 
 
+  logout() {
+    console.log('logout');
+    this.Role.authRole = 'Guest';
+  }
 }
