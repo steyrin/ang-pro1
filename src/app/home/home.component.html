@@ -3,12 +3,14 @@
 
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
-      <div class="col-lg-7">
-        
-        <div *ngIf="AdminCheck.authRole==='Admin'">
-          <input [(ngModel)]="homeContent">
-          <button (click)="update()">Edit</button>
+      <div  class="col-lg-7">
+        <div *ngIf="AdminCheck.authRole==='Admin'" class="input-group mb-3">
+          <input [(ngModel)]="homeContent" type="text" class="form-control" placeholder="Home link change" aria-label="Home link change" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button (click)="update()" class="btn btn-outline-secondary" type="button">Edit</button>
+          </div>
         </div>
+
         <img class="img-fluid rounded mb-4 mb-lg-0" src="http://placehold.it/900x400" alt="">
       </div>
       <!-- /.col-lg-8 -->

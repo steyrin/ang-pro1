@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { AboutComponent } from './about/about.component';
 import { AuthComponent } from './auth/auth.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ServicesComponent } from './services/services.component';
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -16,13 +19,14 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    AboutComponent, AuthComponent
+    AboutComponent, AuthComponent, ServicesComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
