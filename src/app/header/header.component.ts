@@ -11,7 +11,6 @@ export class HeaderComponent implements OnInit {
 
   constructor(public Role: AuthServiceService) {
   }
-  home:string='Home';
   ngOnInit(): void {
   }
 

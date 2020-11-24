@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {AuthServiceService} from '../auth-service.service';
 
 @Component({
@@ -6,11 +6,20 @@ import {AuthServiceService} from '../auth-service.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent {
 
-  constructor( public AdminCheck: AuthServiceService) { }
+  homeContent: string;
+
+  constructor( public AdminCheck: AuthServiceService) {
+  }
 
   ngOnInit(): void {
+  }
+
+  update():void{
+
+    this.AdminCheck.home = this.homeContent;
+
   }
 
 }

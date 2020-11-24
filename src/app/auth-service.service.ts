@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 export class AuthServiceService {
 
   public authRole: string = "Guest";
+  public home: string = "Home";
   constructor() { }
   LoginName:string;
   userCheck(login: string, password: string):void
